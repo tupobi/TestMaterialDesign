@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/backup"
+        android:title="Backup"
+        app:showAsAction="always"
+        android:icon="@drawable/image1"></item>
+
+    <item
+        android:id="@+id/nihao"
+        android:title="Nihao"
+        app:showAsAction="never"
+        android:icon="@drawable/image2"></item>
+
+</menu>
