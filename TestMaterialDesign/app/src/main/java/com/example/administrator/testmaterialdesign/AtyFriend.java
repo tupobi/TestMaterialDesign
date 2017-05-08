@@ -19,45 +19,46 @@ import com.bumptech.glide.Glide;
 
 public class AtyFriend extends AppCompatActivity {
     private String friendName;
-    private int imageFriendId;
+    private String imageURL;
     private Toolbar toolbar;
     private CollapsingToolbarLayout collapsingToolbarLayout;
     private ImageView imageFriendView;
     private TextView tvFriendContent;
 
 
-    public static void actionStart(Context context, String friendName, int imageFriendId){
+    public static void actionStart(Context context, String friendName, String imageURL) {
         Intent intent = new Intent(context, AtyFriend.class);
         intent.putExtra("friendName", friendName);
-        intent.putExtra("imageFriendId", imageFriendId);
+        intent.putExtra("imageURL", imageURL);
         context.startActivity(intent);
     }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_friend);
         Intent intent = getIntent();
         friendName = intent.getStringExtra("friendName");
-        imageFriendId = intent.getIntExtra("imageFriendId", 0);
+        imageURL = intent.getStringExtra("imageURL");
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToobar);
         imageFriendView = (ImageView) findViewById(R.id.imageFriendView);
         tvFriendContent = (TextView) findViewById(R.id.tvFriendContent);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null){
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
         collapsingToolbarLayout.setTitle(friendName);
 
-        Glide.with(this).load(imageFriendId).into(imageFriendView);
+        Glide.with(this).load(imageURL).into(imageFriendView);
         tvFriendContent.setText(getFriendContent());
 
     }
 
-    private String getFriendContent(){
+    private String getFriendContent() {
         StringBuilder friendContent = new StringBuilder();
-        for (int i=0; i<500; i++){
+        for (int i = 0; i < 500; i++) {
             friendContent.append(friendName);
         }
         return friendContent.toString();

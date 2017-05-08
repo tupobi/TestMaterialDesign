@@ -5,20 +5,20 @@ package com.example.administrator.testmaterialdesign;
  */
 
 public class Friend {
-    private int imageId;
+    private String imageURL;
     private String friendName;
 
-    public Friend(int imageId, String friendName) {
-        this.imageId = imageId;
+    public Friend(String imageURL, String friendName) {
+        this.imageURL = imageURL;
         this.friendName = friendName;
     }
 
-    public int getImageId() {
-        return imageId;
+    public String getImageURL() {
+        return imageURL;
     }
 
-    public void setImageId(int imageId) {
-        this.imageId = imageId;
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 
     public String getFriendName() {

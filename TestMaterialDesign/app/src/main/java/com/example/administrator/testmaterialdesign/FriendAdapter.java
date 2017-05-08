@@ -1,10 +1,8 @@
 package com.example.administrator.testmaterialdesign;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +40,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
 //                Log.d("----------------->", "onClick: position:" + position);
 //                Log.d("----------------->", "onClick: size:" + mFriendList.size());
                 Friend friend = mFriendList.get(position);
-                AtyFriend.actionStart(mContext, friend.getFriendName(), friend.getImageId());
+                AtyFriend.actionStart(mContext, friend.getFriendName(), friend.getImageURL());
             }
         });
 //        return new ViewHolder(view);
@@ -55,7 +53,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
 //        Log.d("----------------->", "onClick: position:" + position);
         Friend friend = mFriendList.get(position);
         holder.tvFriendName.setText(friend.getFriendName());
-        Glide.with(mContext).load(friend.getImageId()).into(holder.imageFriend);
+        Glide.with(mContext).load(friend.getImageURL()).into(holder.imageFriend);
     }
 
     @Override

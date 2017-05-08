@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView = (NavigationView) findViewById(R.id.naView);
 //        navigationView.setCheckedItem(R.id.nav_call);
 //        设置默认选中项
-        if(actionBar != null){
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.image_menu1);
         }//显示菜单栏
@@ -75,12 +75,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        friends = new Friend[]{new Friend(R.drawable.i1, "Jay"), new Friend(R.drawable.i2, "Lili"),
-                new Friend(R.drawable.i3, "Srary"), new Friend(R.drawable.i4, "Farali"),
-                new Friend(R.drawable.i4, "Kili"), new Friend(R.drawable.i5, "Xiaoming"),
-                new Friend(R.drawable.i6, "Fangfang"), new Friend(R.drawable.i7, "Nuonuo"),
-                new Friend(R.drawable.i8, "Juli"), new Friend(R.drawable.i9, "Dongmei"),
-                new Friend(R.drawable.i10, "Gily")
+        friends = new Friend[]{new Friend("http://img04.tooopen.com/thumbnails/20130701/x_20083555.jpg", "Jay"), new Friend("http://img04.tooopen.com/thumbnails/20130701/x_10055061.jpg", "Lili"),
+                new Friend("http://img04.tooopen.com/thumbnails/20130712/x_17270713.jpg", "Srary"), new Friend("http://img07.tooopen.com/images/20170425/tooopen_sl_206827126972.jpg", "Farali"),
+                new Friend("http://img07.tooopen.com/images/20170427/tooopen_sl_207057788259.jpg", "Kili"), new Friend("http://img02.tooopen.com/images/20141229/sl_107003776898.jpg", "Xiaoming"),
+                new Friend("http://img07.tooopen.com/images/20170412/tooopen_sl_205599453446.jpg", "Fangfang"), new Friend("http://img07.tooopen.com/images/20170425/tooopen_sl_206826426146.jpg", "Nuonuo"),
+                new Friend("http://img07.tooopen.com/images/20170412/tooopen_sl_205630284337.jpg", "Juli"), new Friend("http://img06.tooopen.com/images/20170329/tooopen_sl_203589594142.jpg", "Dongmei"),
+                new Friend("http://img06.tooopen.com/images/20170321/tooopen_sl_202648839562.jpg", "Gily")
         };
 
         friendList = new ArrayList<>();
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    Thread.sleep((long) (1.5*1000));
+                    Thread.sleep((long) (1.5 * 1000));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initFriends() {
         friendList.clear();
-        for (int i=0; i<40; i++){
+        for (int i = 0; i < 40; i++) {
             Random random = new Random();
             int index = random.nextInt(friends.length);
             friendList.add(friends[index]);
